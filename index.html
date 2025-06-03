@@ -4,39 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/346d1c4a22.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
-        <img src="" alt="Logo_Evento" class="header__logo">
+        <img src="img/logo.png" alt="Logo_Evento" class="header__logo">
         <nav class="header__nav">
             <ul class="nav__ul">
-                <li><a href="#welcome">Bienvenida</a></li>
-                <li><a href="#test">Testimonios</a></li>
-                <li><a href="#form">Formulario</a></li>
+                <li><a href="#welcome" class="ul__link">Bienvenida</a></li>
+                <li><a href="#carrusel" class="ul__link">Testimonios</a></li>
+                <li><a href="#form" class="ul__link">Formulario</a></li>
             </ul>
         </nav>
+        <div>
+            <input type="checkbox" id="theme">
+            <label for="theme" class="theme__label">Tema</label>
+        </div>
     </header>
     <main class="container">
-        <section class="container__block">
-            <article class="block__hero" id="welcome">
-                <h1>El Mejor Evento en 20 Paises</h1>
-                <p>Con invitados de talla internacional</p>
-                <a href="">Únetenos</a>
+        <section class="container__block" id="welcome">
+            <article class="block__hero">
+                <img src="img/hero.jpg" alt="innovation" class="hero__img">
+                <div class="hero__inf">
+                    <h1 class="hero__title">¡Descubre el Futuro de la Innovación!</h1>
+                    <p class="hero__desc">Únete al Congreso Internacional de Innovación y Tecnología 2025 y vive una experiencia única de aprendizaje, conexión y crecimiento profesional.</p>
+                    <a href="#form" class="hero__link">Haz parte del cambio</a>
+                </div>
             </article>
         </section>
-        <section class="container__block">
-            <div class="block__carrusel" id="test">
-                <div>
-                    <div></div>
-                </div>
+        <section class="container__block" id="carrusel">
+            <h2>Testimonios</h2>
+            <section id="carrusel__content">
+                <article class="carrusel__item" id="carrusel__item-1">
+                    <div class="item__card">
+                        <i>"El Congreso superó mis expectativas. Las charlas fueron inspiradoras y conocí a muchos profesionales con los que ahora colaboro."</i>
+                        <h4>— Ana M.</h4>
+                    </div>
+                    <div class="item__arrows">
+                        <a href="#carrusel__item-4">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </a>
+                        <a href="#carrusel__item-2">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </article>
+                <article class="carrusel__item" id="carrusel__item-2">
+                    <div class="item__card">
+                        <i>"Una experiencia invaluable para actualizar mis conocimientos en innovación y tecnología. El ambiente fue muy estimulante y profesional."</i>
+                        <h4>— Carlos G.</h4>
+                    </div>
+                    <div class="item__arrows">
+                        <a href="#carrusel__item-1">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </a>
+                        <a href="#carrusel__item-3">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </article>
+                <article class="carrusel__item" id="carrusel__item-3">
+                    <div class="item__card">
+                        <i>"Los paneles estuvieron llenos de ideas frescas y casos prácticos. Me llevo mucho aprendizaje y contactos valiosos."</i>
+                        <h4>— Laura P.</h4>
+                    </div>
+                    <div class="item__arrows">
+                        <a href="#carrusel__item-2">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </a>
+                        <a href="#carrusel__item-4">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </article>
+                <article class="carrusel__item" id="carrusel__item-4">
+                    <div class="item__card">
+                        <i>"Excelente organización y un espacio para crecer y conectar con líderes de la industria. ¡Totalmente recomendado!"</i>
+                        <h4>— Diego R.</h4>
+                    </div>
+                    <div class="item__arrows">
+                        <a href="#carrusel__item-3">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </a>
+                        <a href="#carrusel__item-1">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </section>
+            <div id="carrusel__nav">
+                <a href="#carrusel__item-1"></a>
+                <a href="#carrusel__item-2"></a>
+                <a href="#carrusel__item-3"></a>
+                <a href="#carrusel__item-4"></a>
             </div>
         </section>
-        <section class="container__block">
-            <form action="" class="block__form" id="form">
-
+        <section class="container__block" id="form">
+            <h2>Registro</h2>
+            <form action="" class="block__form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required/>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required/>
+                <label for="ticket">Tipo de ticket:</label>
+                <select id="ticket" name="ticket" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="general">General</option>
+                    <option value="vip">VIP</option>
+                    <option value="estudiante">Estudiante</option>
+                </select>
+                <button type="submit">Enviar registro</button>
             </form>
         </section>
     </main>
+    <footer class="footer">
+        <p>&copy; 2025 Congreso Internacional de Innovación y Tecnología</p>
+        
+        <div class="footer-links">
+            <a href="#">Aviso Legal</a>
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Términos de Servicio</a>
+        </div>
+        
+        <div class="footer-social">
+            <a href="#">Twitter</a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
 </body>
 </html>

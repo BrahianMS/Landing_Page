@@ -3,20 +3,270 @@
     padding: 0;
 }
 
+:root {
+    --color-primario: #9448BC;
+    --color-secundario: #72EFDD;
+    --backgroud-color: #f7f7f7;
+}
+
+body {
+    background-color: var(--backgroud-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+body:has(#theme:checked) {
+    background-color: #333;
+    color: white;
+}
+
+h1, h2 {
+    text-shadow: 0 0 2px var(--color-primario);
+}
+
+h2 {
+    font-size: 2vw;
+}
+
 .header {
     width: 100%;
-    background-color: rgb(130, 102, 255);
+    background-color: var(--color-primario);
     display: inline-flex;
     justify-content: space-between;
+    height: 50px;
+    align-items: center;
+}
+
+.header__logo {
+    height: 45px;
+    margin-left: 50px;
+    border-radius: 5px;
 }
 
 .nav__ul {
     display: inline-flex;
     list-style: none;
-    padding: 20px;
+    height: 50px;
+    align-items: center;
+
+}
+
+.ul__link {
+    text-decoration: none;
+    padding: 12% 10px;
+    border-inline: 0.5px solid var(--color-secundario);
+    color: white;
+}
+
+.ul__link:hover {
+    background-color: var(--color-secundario);
+    color: var(--font-color);
+}
+
+#theme {
+    display: none;
+}
+
+.theme__label {
+    color: var(--color-secundario);
+    padding: 6px;
+    margin-right: 7px;
+    border: 2px solid var(--color-secundario);
+    border-radius: 25px;
+}
+
+.theme__label:hover {
+    background-color: var(--color-secundario);
+    color: var(--font-color);
+}
+
+#theme:checked + .theme__label {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .container__block {
-    width: 85%;
+    width: 70%;
     margin: 10px auto;
+    display: flex;
+    border: 2px solid var(--color-primario);
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--color-primario);
+    align-items: center;
+    padding: 5px;
+}
+
+.block__hero {
+    display: flex;
+}
+
+.hero__img {
+    width: 30%;
+    border-radius: 9px;
+}
+
+.hero__inf {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-evenly;
+
+}
+
+.hero__title {
+    font-size: 3vw;
+    margin: 0 10px;
+}
+
+.hero__desc {
+    margin: 0 10px;
+    font-size: 1.6vw;
+}
+
+.hero__link {
+    border: 2px solid var(--color-secundario);
+    border-radius: 7px;
+    padding: 3px;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.6vw;
+    width: 37%;
+    text-align: center;
+}
+
+#carrusel {
+    flex-direction: column;
+}
+
+#carrusel__content {
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carrusel__item {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.item__card {
+    height: 96%;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--color-secundario);
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item__card i {
+    margin: 35px;
+    font-size: 1.3vw;
+}
+
+.item__card h4{
+    font-size: 1.7vw;
+}
+
+.item__arrows {
+    position: absolute;
+    top: 0;
+    height: 180px;
+    width: 93%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px;
+}
+
+.item__arrows a {
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+#carrusel__nav {
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+    margin: 1rem;
+}
+
+#carrusel__nav a {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #909090;
+}
+
+#carrusel__nav a:hover {
+    background-color: #282828;
+}
+
+#form {
+    flex-direction: column;
+}
+
+.block__form {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #585858;
+    border-radius: 1em;
+    text-align: end;
+}
+
+form label {
+    display: inline-block;
+    width: 90px;
+}
+
+form input {
+    font: 1em sans-serif;
+    width: 250px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    color: black;
+}
+
+input:focus {
+    border-color: #000;
+}
+
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.footer-links,
+.footer-social {
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: var(--color-secundario);
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-social a {
+  color: var(--color-secundario);
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  opacity: 0.8;
 }
