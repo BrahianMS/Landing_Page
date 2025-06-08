@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -245,28 +246,74 @@ input:focus {
   padding: 2rem;
 }
 
-.footer-links,
-.footer-social {
+.footer__links,
+.footer__social {
   margin-top: 1rem;
 }
 
-.footer-links a {
+.footer__links a {
   color: var(--color-secundario);
   margin: 0 0.5rem;
   text-decoration: none;
 }
 
-.footer-links a:hover {
+.footer__links a:hover {
   text-decoration: underline;
 }
 
-.footer-social a {
+.footer__social a {
   color: var(--color-secundario);
   margin: 0 0.5rem;
   font-size: 1.2rem;
   text-decoration: none;
 }
 
-.footer-social a:hover {
+.footer__social a:hover {
   opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+    h2 {
+        font-size: 3vw;
+    }
+    .header__logo {
+        display: none;
+    }
+    .ul__link{
+        font-size: 3.5vw;
+    }
+    .theme__label {
+        font-size: 3.5vw;
+    }
+    .hero__title {
+        font-size: 4vw;
+    }
+    .hero__desc {
+        font-size: 2.5vw;
+    }
+    .hero__link {
+        font-size: 2vw;
+    }
+    .container__block {
+        width: 95%;
+    }
+    .item__arrows {
+        left: -11px;
+    }
+    .item__card i {
+        font-size: 2.6vw;
+    }
+    .block__form {
+        width: 85%;
+        text-align: center;
+    }
+    .block__form label {
+        font-size: 3vw;
+    }
+    .block__form input {
+        width: 200px;
+    }
 }
